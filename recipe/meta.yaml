@@ -1,5 +1,5 @@
 {% set name = "requests-async" %}
-{% set version = "0.6.1" %}
+{% set version = "0.6.2" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3bfdd7f4b4d24ae86c0382c6da90ba704e9629b9d803f6f79d2feb39a480f3c0
+  sha256: 8f128b66dec2974aa263e24410914b1829d3e1506497364c2edfa10112f55e0b
 
 build:
   noarch: python
