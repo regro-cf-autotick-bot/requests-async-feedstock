@@ -1,5 +1,5 @@
 {% set name = "requests-async" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.2" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8731420451383196ecf2fd96082bfc8ae5103ada90aba185888499d7784dde6f
+  sha256: 8f128b66dec2974aa263e24410914b1829d3e1506497364c2edfa10112f55e0b
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
 requirements:
@@ -19,7 +19,7 @@ requirements:
     - pip
     - python >=3.6
   run:
-    - httpcore ==0.3.*
+    - http3 ==0.6.*
     - python >=3.6
     - requests ==2.*
 
@@ -37,3 +37,4 @@ about:
 extra:
   recipe-maintainers:
     - nicoddemus
+    - wiphoo
