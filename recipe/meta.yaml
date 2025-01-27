@@ -6,24 +6,26 @@ package:
   version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 8f128b66dec2974aa263e24410914b1829d3e1506497364c2edfa10112f55e0b
 
 build:
   noarch: python
-  number: 1
+  number: 2
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - http3 ==0.6.*
-    - python >=3.6
+    - python >={{ python_min }}
     - requests ==2.*
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - requests_async
 
